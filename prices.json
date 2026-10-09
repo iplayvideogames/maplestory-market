@@ -1057,6 +1057,14 @@
       "quantity": 1,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 133,
+      "name": "Bronze Igor",
+      "price": 11000,
+      "quantity": 12,
+      "status": "unsold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
