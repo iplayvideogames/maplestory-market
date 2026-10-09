@@ -1065,6 +1065,22 @@
       "quantity": 12,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 134,
+      "name": "Slime Earrings",
+      "price": 11000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 135,
+      "name": "Angel Wand",
+      "price": 14000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
