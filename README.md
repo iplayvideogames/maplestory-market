@@ -1,29 +1,57 @@
-# MapleStory Market
+# Maple Market — The Mesos Ledger
 
-A shareable, read-only MapleStory Classic market dashboard tracking observed sold prices and unsold asking prices in mesos.
+A public, read-only MapleStory Classic price history and trading dashboard.
 
-## Publish on GitHub Pages
+**Website:** https://iplayvideogames.github.io/maplestory-market/
 
-1. The repository is public and ready for GitHub Pages.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select branch **master** and directory **/(root)**, then **Save**.
-5. The expected address is **https://iplayvideogames.github.io/maplestory-market/** once GitHub Pages finishes deploying.
+## Architecture
 
-## Updating prices
+The published website is on the `master` branch:
 
-The dashboard reads `prices.json` on page load and rechecks it every 60 seconds. Updating the file on the `master` branch triggers a new GitHub Pages deployment automatically. The public URL stays the same.
+- `index.html` — accessible semantic structure.
+- `style.css` — responsive visual design.
+- `app.js` — filtering, sales and asking-price comparison, item history charts, image fallbacks, and remote data reader.
+- `prices.json` — retained bootstrap snapshot *only*; **not** the live source of truth.
 
-Price history is maintained in `prices.json`:
+The **live record of truth** is **`data:prices.json`**. Changes to the `data` branch do not update the `master` branch or trigger the branch-based GitHub Pages deployment. The website fetches `https://raw.githubusercontent.com/iplayvideogames/maplestory-market/data/prices.json` on load and checks again every 60 seconds.
 
-- `status: "sold"`: counts toward sold-price averages and sale trends.
-- `status: "unsold"`: tracked separately; never included in sold-price averages.
-- `price`: unit price in mesos, or `null` if the asking price wasn't provided.
-- `quantity`: number of units at the stated unit price.
-- `date`: date observed. `id`: stable observation ID.
+GitHub's raw CDN and browser caching may delay visibility even though the page checks every minute; the refresh control requests a fresh version. If remote data is unavailable on initial load, the page falls back to the `master` snapshot and warns visitors.
 
-The dashboard's main averages are per distinct sold observation. Item details also show quantity-weighted sold averages. MeowDB item links and sprite IDs are stored in `prices.json` under `items`. If a sprite cannot load, the dashboard tries an alternate source and then displays a category icon.
+**Publishing:** Repository Settings → Pages → Deploy from a branch → `master` / `/(root)`.
 
-For updates from ChatGPT, provide item entries in the connected chat. ChatGPT should fetch the latest `prices.json`, append unique new observations, then update that file through the connected GitHub integration. Do not replace the historical dataset with only the latest session's observations.
+## Price record schema
 
-Unpriced items and ambiguous voice entries remain in the dataset or pending list for clarification.
+Every `entries` array element in `data:prices.json` has:
+
+- `id`: unique increasing observation identifier.
+- `name`: original normalized price-ledger item name.
+- `price`: *per-unit mesos* or `null` if no asking price was provided.
+- `quantity`: number of units included in this observation.
+- `status`: `sold` or `unsold`.
+- `date`: recorded observation date (the initial chat history was recorded October 9, 2026).
+
+The main displayed "average sold" is an *unweighted average of recorded completed-sale sightings*. The item detail also displays the unit-weighted average. **Unsold sightings are never included in sold-price averages.**
+
+The `items` object can hold:
+
+- `page`: verified MeowDB item page ID.
+- `sprite`: known item sprite ID (external image).
+- `canonical`: MeowDB canonical name, when verified.
+- `aliases`: common abbreviations from voice/chat entries.
+- `category`: one of `scroll`, `fashion`, `equipment`, `material`, or `other`.
+
+### Updating from ChatGPT
+
+Use the connected **iplayvideogames** GitHub account. Before writing, **fetch `prices.json` on the `data` branch**, append new entries (don't replace historical entries), assign the next ID, and update the file with its current SHA on **`data`**. Do not write prices to `master`. Confirm successful commit before responding "Added."
+
+Match abbreviations/typos against saved aliases and verified MeowDB item names. Avoid automatic matches where multiple items could be intended; ask before merging those. Preserve full history and the sale/unsold distinction (`ww`, `bb`, and "unsold" all designate unsold).
+
+Unpriced unsold notes should stay unpriced. The pending voice batch mentioning "Black Sunglasses, Angel Halo, Angel Wings, Angel Wand — 14k" has not been assigned to any specific items.
+
+## Third-party sources
+
+Item lookup and outbound links: https://meowdb.com/msclassic/item-db/all . External item sprites are optional and have fallbacks. Data prices are independently reported by the tracker owner; no external market prices are imported.
+
+## Deployment
+
+GitHub Pages redeploys when the site files on `master` change, but **not** for ordinary price commits to `data`. Visitors continue using the same address. No GitHub personal-access token is stored in the website.
