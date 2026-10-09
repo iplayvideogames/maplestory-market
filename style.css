@@ -203,3 +203,10 @@ h1 em{font-weight:400;font-style:italic;color:var(--forest)}
  .site-footer{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Historical dates: visible yet subordinate to the trade price */
+.item-seen{display:block;font-size:10px;color:#899588;margin-top:2px;white-space:nowrap}
+.detail-tracked{font-size:10px!important;color:#758477!important;margin-top:4px!important}
+.trade-when{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+.trade-date{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:#8a968b;white-space:nowrap}
+@media(max-width:600px){.item-seen{font-size:9px}.trade-date{font-size:9px}}
