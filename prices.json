@@ -1105,6 +1105,22 @@
       "quantity": 1,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 139,
+      "name": "Earring INT 60%",
+      "price": 25000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 140,
+      "name": "Heart Tights",
+      "price": 12000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
