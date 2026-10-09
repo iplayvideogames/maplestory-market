@@ -1010,7 +1010,8 @@
       "page": 2767,
       "sprite": 1037003,
       "locale": "ko",
-      "category": "fashion"
+      "category": "fashion",
+      "canonical": "Slime Earrings"
     },
     "Earring LUK 60%": {
       "page": 97,
@@ -1053,7 +1054,9 @@
     },
     "Slime Slippers": {
       "page": 1631,
-      "sprite": 1077029
+      "sprite": 1077029,
+      "canonical": "Slime Slippers",
+      "category": "fashion"
     },
     "Slime T-Shirt": {
       "page": 1887,
@@ -1073,7 +1076,9 @@
     "Bunny Ears": {
       "page": 2761,
       "sprite": 1007142,
-      "locale": "ko"
+      "locale": "ko",
+      "canonical": "Bunny Ears",
+      "category": "fashion"
     },
     "Pan Lid": {
       "page": 917,
@@ -1145,6 +1150,31 @@
       "category": "scroll"
     },
     "Bucket Hat": {
+      "category": "fashion"
+    },
+    "Black Cat Beanie": {
+      "page": 3198,
+      "canonical": "Black Cat Beanie",
+      "category": "fashion"
+    },
+    "Orange Cat Beanie": {
+      "page": 3200,
+      "canonical": "Orange Cat Beanie",
+      "category": "fashion"
+    },
+    "Bunny Earmuffs": {
+      "page": 2759,
+      "canonical": "Bunny Earmuffs",
+      "category": "fashion"
+    },
+    "Patissier Hat": {
+      "page": 1775,
+      "canonical": "Patissier Hat",
+      "category": "fashion"
+    },
+    "Kitty Chat Ring": {
+      "page": 1644,
+      "canonical": "Kitty Chat Ring",
       "category": "fashion"
     }
   },
