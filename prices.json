@@ -1097,6 +1097,14 @@
       "quantity": 1,
       "status": "sold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 138,
+      "name": "Earring INT 60%",
+      "price": 28000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
