@@ -993,6 +993,14 @@
       "quantity": 1,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 125,
+      "name": "Crossbow Attack 60%",
+      "price": 30000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
