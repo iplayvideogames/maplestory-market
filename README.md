@@ -4,11 +4,11 @@ A shareable, read-only MapleStory Classic market dashboard tracking observed sol
 
 ## Publish on GitHub Pages
 
-1. For a public, freely accessible site, ensure the repository is public (Settings → General → Danger Zone → Change repository visibility).
+1. The repository is public and ready for GitHub Pages.
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
 4. Select branch **master** and directory **/(root)**, then **Save**.
-5. The expected address is **https://oobohp.github.io/maplestory-market/** once GitHub Pages finishes deploying.
+5. The expected address is **https://iplayvideogames.github.io/maplestory-market/** once GitHub Pages finishes deploying.
 
 ## Updating prices
 
