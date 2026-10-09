@@ -1,155 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0d1522">
-<meta name="description" content="MapleStory Classic market dashboard. Historical sales, unsold listings, and mesos price tracking.">
-<title>MapleStory Market | Mesos Price Tracker</title>
-<style>
-:root{color-scheme:dark;--bg:#0c1420;--panel:#162233;--panel2:#1b2b3e;--border:#2c3d53;--text:#edf4fb;--muted:#9aaec4;--green:#78deb0;--amber:#f5c57e;--blue:#99cafd}
-*{box-sizing:border-box}body{background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;margin:0}
-main{max-width:1280px;padding:28px 18px 80px;margin:auto}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
-h1,h2,p{margin:0}h1{font-size:clamp(25px,3.5vw,37px);letter-spacing:-1.4px}h2{font-size:14px;letter-spacing:.3px;font-weight:740}
-small,.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;font-size:11px;color:var(--green);font-weight:750;letter-spacing:2px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.lede{color:var(--muted);margin-top:5px}
-.status{border:1px solid var(--border);padding:8px 12px;border-radius:100px;font-size:12px;color:#b5c8da;white-space:nowrap}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px}.card,.panel{border-radius:14px;border:1px solid var(--border);background:var(--panel)}
-.card{padding:19px 16px}.card .value{font-size:27px;font-weight:760;line-height:1.1;letter-spacing:-1px}.card .label{color:var(--muted);font-size:12px;margin-top:8px}
-.sectionTitle{font-weight:760;color:#c4d1de;letter-spacing:1px;text-transform:uppercase;font-size:11px;margin-bottom:11px}
-.featured{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-bottom:24px}
-.feature{background:var(--panel);border:1px solid var(--border);border-radius:12px;color:var(--text);padding:12px 5px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;font:inherit;min-width:0}
-.feature:hover,.feature:focus-visible{border-color:var(--green);background:var(--panel2)}
-.feature .title{font-size:11px;font-weight:730;min-height:31px;line-height:1.25}.feature .price{font-size:16px;font-weight:780;color:var(--green)}
-.layout{display:grid;grid-template-columns:minmax(0,1.27fr) minmax(0,.83fr);gap:13px;align-items:start}.panel{padding:17px;min-width:0}
-.heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
-.controls{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
-input,select{border:1px solid #41536a;background:#0e1a2a;color:var(--text);border-radius:8px;padding:10px;font:inherit;outline:0;min-width:0}
-input{flex:2 1 140px}select{flex:1 1 105px}input:focus,select:focus{border-color:var(--blue)}
-.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%}th{color:var(--muted);font-size:10px;letter-spacing:.6px;text-transform:uppercase;text-align:left;white-space:nowrap;border-bottom:1px solid var(--border);padding:9px 6px}
-td{padding:9px 6px;border-bottom:1px solid #26364a;font-size:12px;vertical-align:middle}td.right,th.right{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.itemBtn{display:flex;align-items:center;gap:8px;background:none;border:0;color:var(--text);cursor:pointer;font:inherit;padding:0;text-align:left}
-.itemBtn:hover .name{text-decoration:underline}.name{font-weight:750;font-size:12px}.sub{font-size:10px;color:var(--muted)}
-.icon{display:inline-flex;justify-content:center;align-items:center;flex:0 0 35px;width:35px;height:35px;border-radius:8px;border:1px solid #435670;background:#2b4055;font-size:17px;font-weight:750;color:#c0d2e4;position:relative;overflow:hidden}
-.icon img{position:absolute;inset:0;margin:auto;max-width:30px;max-height:30px;object-fit:contain;image-rendering:pixelated}
-.icon.big{width:46px;height:46px;flex-basis:46px}.icon.big img{max-width:40px;max-height:40px}
-.green{color:var(--green)}.amber{color:var(--amber)}.right{text-align:right}
-.active{background:#22394b}.more{padding:10px 16px;background:#24394f;border:1px solid #4b6680;border-radius:8px;color:var(--text);margin:15px auto 0;display:block;cursor:pointer}.more[hidden]{display:none}
-.detailHeader{display:flex;align-items:center;gap:10px;margin-bottom:17px}.detailName{font-size:18px;font-weight:780;line-height:1.2}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.chips a{font-size:11px}
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:18px}
-.metric{background:#1d3045;padding:12px;border:1px solid #344962;border-radius:9px;min-width:0}.metric .label{font-size:11px;color:var(--muted)}
-.metric .val{font-size:22px;font-weight:780;letter-spacing:-.5px;margin-top:3px;white-space:nowrap}
-.legend{font-size:11px;color:var(--muted);margin:10px 0;display:flex;gap:14px}.legend b{display:inline-block;height:8px;width:8px;border-radius:50%;margin-right:5px;background:var(--green)}.legend b.ask{background:var(--amber)}
-svg{display:block;width:100%;height:auto}.history{max-height:240px;overflow:auto;margin-top:9px}.history td{font-size:11px;padding:7px 5px}
-.lower{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:13px}
-.mini{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:12px}
-.mini:last-child{border-bottom:0}.mini button{color:var(--text);padding:0;border:0;background:none;text-align:left;font:inherit;cursor:pointer;font-weight:720}.mini button:hover{text-decoration:underline}
-.footnote{font-size:12px;color:var(--muted);line-height:1.7;border:1px dashed #3c5169;border-radius:12px;padding:14px;margin-top:14px}
-#error{color:#f7c28a;display:none;margin:12px 0}
-@media(max-width:850px){.layout,.lower{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.top{align-items:start;flex-direction:column}}
-@media(max-width:560px){main{padding:16px 9px 45px}.panel{padding:12px}.feature{padding:9px 3px}.featured{gap:5px}.feature .title{font-size:9px;min-height:42px}.feature .price{font-size:13px}.icon{width:30px;height:30px;flex-basis:30px}.card .value{font-size:23px}.card{padding:14px 10px}td,th{padding:7px 4px}.itemBtn{gap:5px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="An independent MapleStory Classic price ledger: completed sales, unsold asking prices, and detailed mesos price history.">
+  <title>Maple Market — Price Ledger</title>
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="preconnect" href="https://meowdb.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-<main>
-<header class="top"><div><div class="eyebrow">MapleStory Classic · Community Price Log</div><h1>MapleStory Market <span class="green">↗</span></h1><p class="lede">Real observations, not guesses. Sales and unsold asking prices in mesos.</p></div><div class="status"><span class="dot"></span><span id="sync">Loading price history...</span></div></header>
-<div id="error" role="status"></div>
-<div class="cards" id="cards"></div>
-<div class="sectionTitle">Frequently Tracked Items</div>
-<div class="featured" id="featured"></div>
-<div class="layout">
-<section class="panel">
-<div class="heading"><h2>Market Price Directory</h2><span class="muted" id="count"></span></div>
-<div class="controls"><input id="search" placeholder="Search equipment, scrolls, NX items..." aria-label="Search items" type="search"><select id="filter" aria-label="Filter status"><option value="all">All items</option><option value="sold">Has sold prices</option><option value="unsold">Has unsold listings</option><option value="deal">Below-average asks</option></select><select id="sort" aria-label="Sort items"><option value="recent">Recently recorded</option><option value="frequent">Most observations</option><option value="average">Highest average</option><option value="name">Item name A-Z</option></select></div>
-<div class="scroll"><table><thead><tr><th>Item</th><th class="right">Avg. Sold</th><th class="right">Last Sold</th><th class="right">Lowest Ask</th><th class="right">DB</th></tr></thead><tbody id="rows"></tbody></table></div>
-<button type="button" class="more" id="more" hidden>Show all items</button>
-</section>
-<section class="panel"><div class="heading"><h2>Item Price History</h2><span class="muted">Select an item</span></div><div id="detail"></div></section>
-</div>
-<div class="lower"><section class="panel"><div class="heading"><h2>Asking Below Historical Average</h2></div><div id="deals"></div></section><section class="panel"><div class="heading"><h2>Latest Observations</h2></div><div id="recent"></div></section></div>
-<div class="footnote">Sold observations alone determine the average sold price. Quantity-weighted averages are shown separately in item details. Unsold asking prices are shown for comparison, not treated as completed sales. Historical listings may no longer be available. Unpriced unsold entries remain retained. One ambiguous voice batch ("Black Sunglasses, Angel Halo, Angel Wings, Angel Wand — 14k") awaits clarification and is excluded.<br>Data is loaded from this site's <a href="./prices.json">prices.json</a> and checked for updates every minute. Matched item details link to <a href="https://meowdb.com/msclassic/item-db" target="_blank" rel="noopener noreferrer">MeowDB</a>.</div>
-</main>
-<script>
-(function(){
-"use strict";
-var d=null,entry=[],items=[],map=new Map(),selected="Earring LUK 60%",allRows=false,signature="";
-function el(id){return document.getElementById(id)}
-function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
-function money(n){return n==null?"—":Math.round(n).toLocaleString("en-US")}
-function abbrev(n){return n==null?"—":n>=1e6?(Number((n/1e6).toFixed(2))+"m"):n>=1000?(Number((n/1000).toFixed(1))+"k"):money(n)}
-function url(n){var m=d.items&&d.items[n];return m&&m.page?"https://meowdb.com/msclassic/"+(m.locale?m.locale+"/":"")+"item-db/"+m.page:null}
-function category(n){return /60%|10%|scroll/i.test(n)?"S":/ore|ingot/i.test(n)?"O":/ring/i.test(n)?"R":/hat|beanie|ears/i.test(n)?"H":/shirt|skirt|sweater|jeans|tights|outfit/i.test(n)?"C":"✦"}
-function icon(n,big){var m=d.items&&d.items[n],ht='<span class="icon'+(big?' big':'')+'"><span>'+category(n)+'</span>';
-if(m&&m.sprite){ht+='<img loading="lazy" alt="" data-alt="https://maplestory.io/api/GMS/83/item/'+m.sprite+'/icon" src="https://meowdb.com/msclassic/api/assets/icons/'+m.sprite+'">'}
-return ht+'</span>'}
-function compute(){
-var group=new Map();entry.forEach(function(e){if(!group.has(e.name))group.set(e.name,[]);group.get(e.name).push(e)});
-items=Array.from(group,function(pair){
-var n=pair[0],h=pair[1],sold=h.filter(function(e){return e.status==="sold"&&e.price!=null}),unsold=h.filter(function(e){return e.status==="unsold"}),asks=unsold.filter(function(e){return e.price!=null}),qty=sold.reduce(function(v,e){return v+e.quantity},0);
-return {name:n,history:h,sold:sold,unsold:unsold,avg:sold.length?sold.reduce(function(v,e){return v+e.price},0)/sold.length:null,weightedAvg:qty?sold.reduce(function(v,e){return v+e.price*e.quantity},0)/qty:null,last:sold.length?sold[sold.length-1].price:null,lowAsk:asks.length?Math.min.apply(null,asks.map(function(e){return e.price})):null,lastId:h[h.length-1].id};
-});map=new Map(items.map(function(i){return [i.name,i]}));if(!map.has(selected))selected=items.length?items[0].name:"";
-}
-function badges(){
-var sold=entry.filter(function(e){return e.status==="sold"&&e.price!=null}),unsold=entry.filter(function(e){return e.status==="unsold"&&e.price!=null}),value=sold.reduce(function(v,e){return v+e.price*e.quantity},0);
-el("cards").innerHTML=[[items.length,"Unique items"],[sold.length,"Sold price observations"],[unsold.length,"Priced unsold listings"],[abbrev(value),"Total observed sold value"]].map(function(p){return '<div class="card"><div class="value">'+p[0]+'</div><div class="label">'+p[1]+'</div></div>'}).join("");
-}
-function features(){
-var top=["Earring LUK 60%","White Label Ring","Slime Earrings","Angel Halo","Slime Slippers"].filter(function(n){return map.has(n)});
-el("featured").innerHTML=top.map(function(n){var i=map.get(n);return '<button class="feature" data-name="'+esc(n)+'" type="button">'+icon(n,true)+'<span class="title">'+esc(n)+'</span><span class="price">'+abbrev(i.avg)+'</span><span class="sub">average sold</span></button>'}).join("");
-}
-function rows(){
-var q=el("search").value.trim().toLowerCase(),f=el("filter").value,s=el("sort").value;
-var list=items.filter(function(i){return i.name.toLowerCase().includes(q)&&(f==="all"||(f==="sold"&&i.sold.length)||(f==="unsold"&&i.unsold.length)||(f==="deal"&&i.avg!=null&&i.lowAsk!=null&&i.lowAsk<i.avg))});
-list.sort(function(a,b){return s==="name"?a.name.localeCompare(b.name):s==="frequent"?b.history.length-a.history.length||b.lastId-a.lastId:s==="average"?(b.avg==null?-1:b.avg)-(a.avg==null?-1:a.avg):b.lastId-a.lastId});
-el("count").textContent=list.length+" items";var subset=allRows?list:list.slice(0,24);
-el("rows").innerHTML=subset.map(function(i){
-var link=url(i.name);
-return '<tr'+(i.name===selected?' class="active"':'')+'><td><button class="itemBtn" type="button" data-name="'+esc(i.name)+'">'+icon(i.name,false)+'<span><span class="name">'+esc(i.name)+'</span><br><span class="sub">'+i.sold.length+' sold · '+i.unsold.length+' unsold</span></span></button></td><td class="right green">'+abbrev(i.avg)+'</td><td class="right">'+abbrev(i.last)+'</td><td class="right amber">'+abbrev(i.lowAsk)+'</td><td class="right">'+(link?'<a target="_blank" rel="noopener noreferrer" href="'+link+'" aria-label="Open in MeowDB">↗</a>':'<span class="muted">—</span>')+'</td></tr>';
-}).join("")||'<tr><td colspan="5" class="muted" style="text-align:center;padding:25px">No items match</td></tr>';
-el("more").hidden=list.length<=24;el("more").textContent=allRows?"Show fewer":"Show all "+list.length+" items";
-}
-function plot(i){
-var p=i.history.filter(function(e){return e.price!=null});if(!p.length)return '<p class="muted">No priced observations yet.</p>';
-var W=580,H=225,L=45,R=18,T=14,B=28,width=W-L-R,height=H-T-B,mx=Math.max.apply(null,p.map(function(e){return e.price}))*1.15;
-function xx(j){return L+(p.length===1?width/2:j*width/(p.length-1))}
-function yy(v){return T+height*(1-v/mx)}
-var grid=[0,.25,.5,.75,1].map(function(t){return '<line x1="'+L+'" y1="'+yy(mx*t)+'" x2="'+(W-R)+'" y2="'+yy(mx*t)+'" stroke="#354960" stroke-dasharray="4 5"/><text x="'+(L-7)+'" y="'+(yy(mx*t)+4)+'" fill="#a6bad0" font-size="10" text-anchor="end">'+abbrev(mx*t)+'</text>'}).join("");
-var sold=p.map(function(e,j){return {e:e,j:j}}).filter(function(o){return o.e.status==="sold"});
-var path=sold.map(function(o,j){return (j?"L":"M")+xx(o.j)+","+yy(o.e.price)}).join(" ");
-var dots=p.map(function(e,j){return '<circle cx="'+xx(j)+'" cy="'+yy(e.price)+'" r="5.5" fill="'+(e.status==="sold"?"#78deb0":"#f5c57e")+'" stroke="#0c1420" stroke-width="2"><title>'+esc(e.status)+" · "+money(e.price)+" mesos · x"+e.quantity+'</title></circle>'}).join("");
-return '<div class="legend"><span><b></b>Sold</span><span><b class="ask"></b>Unsold asking</span></div><svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Price history for '+esc(i.name)+'">'+grid+(sold.length>1?'<path d="'+path+'" fill="none" stroke="#78deb0" stroke-width="2.4"/>':'')+dots+'<text x="'+L+'" y="'+(H-5)+'" font-size="11" fill="#a6bad0">Older</text><text x="'+(W-R)+'" y="'+(H-5)+'" font-size="11" text-anchor="end" fill="#a6bad0">Newer</text></svg>';
-}
-function detail(){
-var i=map.get(selected);if(!i){el("detail").textContent="No items recorded yet";return}
-var lo=i.sold.length?Math.min.apply(null,i.sold.map(function(e){return e.price})):null,hi=i.sold.length?Math.max.apply(null,i.sold.map(function(e){return e.price})):null,ln=url(i.name);
-var pairs=[["Average sold",abbrev(i.avg),"green"],["Lowest unsold",abbrev(i.lowAsk),"amber"],["Latest sold",abbrev(i.last),""],["Sold price range",abbrev(lo)+" – "+abbrev(hi),""]];
-el("detail").innerHTML='<div class="detailHeader">'+icon(i.name,true)+'<div><div class="detailName">'+esc(i.name)+'</div><div class="chips">'+(ln?'<a href="'+ln+'" rel="noopener noreferrer" target="_blank">Open in MeowDB ↗</a>':'<span class="muted">MeowDB match pending</span>')+'<a href="?item='+encodeURIComponent(i.name)+'">Direct item link</a></div></div></div>'+
-'<div class="metrics">'+pairs.map(function(p){return '<div class="metric"><div class="label">'+p[0]+'</div><div class="val '+p[2]+'">'+p[1]+'</div></div>'}).join("")+'</div>'+
-plot(i)+'<div class="heading" style="margin-top:18px"><h2>All price observations</h2><span class="muted">'+i.sold.length+' sold · '+i.unsold.length+' unsold</span></div><div class="history"><table><thead><tr><th>#</th><th>Status</th><th class="right">Unit price</th><th class="right">Qty</th></tr></thead><tbody>'+i.history.map(function(e){return '<tr><td class="muted">'+e.id+'</td><td class="'+(e.status==="sold"?"green":"amber")+'">'+e.status+'</td><td class="right">'+money(e.price)+'</td><td class="right">'+e.quantity+'</td></tr>'}).join("")+'</tbody></table></div><p class="muted" style="margin-top:12px;font-size:11px">Quantity-weighted sold average: '+money(i.weightedAvg)+' mesos.</p>';
-}
-function footer(){
-var deals=items.filter(function(i){return i.avg!=null&&i.lowAsk!=null&&i.lowAsk<i.avg}).sort(function(a,b){return a.lowAsk/a.avg-b.lowAsk/b.avg}).slice(0,8);
-el("deals").innerHTML=deals.map(function(i){return '<div class="mini"><div><button data-name="'+esc(i.name)+'">'+esc(i.name)+'</button><div class="sub">Sold avg '+abbrev(i.avg)+' · Asking '+abbrev(i.lowAsk)+'</div></div><strong class="green">−'+((1-i.lowAsk/i.avg)*100).toFixed(1)+'%</strong></div>'}).join("")||'<p class="muted">No below-average asking prices currently recorded.</p>';
-el("recent").innerHTML=entry.filter(function(e){return e.price!=null}).slice(-9).reverse().map(function(e){return '<div class="mini"><div><button data-name="'+esc(e.name)+'">'+esc(e.name)+'</button><div class="sub">'+e.status+(e.quantity>1?' · x'+e.quantity:'')+'</div></div><strong class="'+(e.status==="sold"?"green":"amber")+'">'+abbrev(e.price)+'</strong></div>'}).join("");
-}
-function render(){compute();badges();features();rows();detail();footer()}
-function setSync(s){el("sync").textContent=s}
-function fetchData(){
-fetch("./prices.json?t="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(function(x){
-if(!x||!Array.isArray(x.entries)||typeof x.items!=="object")throw Error("Invalid price format");
-var newSig=JSON.stringify(x.entries)+JSON.stringify(x.items);if(newSig!==signature){signature=newSig;d=x;entry=x.entries;render()}
-setSync("Data synced · "+x.entries.length+" entries");el("error").style.display="none";
-}).catch(function(e){el("error").style.display="block";el("error").textContent="Could not load latest prices: "+e.message+". Please try refreshing.";setSync("Data sync unavailable")});
-}
-document.addEventListener("error",function(ev){var img=ev.target;if(img&&img.tagName==="IMG"){if(img.dataset.alt&&!img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.alt}else{img.style.display="none"}}},true);
-document.addEventListener("click",function(ev){var b=ev.target.closest("[data-name]");if(!b)return;var n=b.getAttribute("data-name");if(!map.has(n))return;selected=n;rows();detail();if(window.innerWidth<850)el("detail").scrollIntoView({behavior:"smooth",block:"nearest"});try{history.replaceState(null,"","?item="+encodeURIComponent(n))}catch(e){}});
-["search","filter","sort"].forEach(function(id){el(id).addEventListener(id==="search"?"input":"change",function(){allRows=false;rows()})});
-el("more").addEventListener("click",function(){allRows=!allRows;rows()});
-selected=new URLSearchParams(location.search).get("item")||selected;
-fetchData();setInterval(fetchData,60000);
-})();
-</script>
+  <a class="skip" href="#item-search">Skip to item search</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="Maple Market home">
+        <span class="brand-stamp" aria-hidden="true">M<span class="stamp-leaf">✦</span></span>
+        <span class="brand-words"><strong>Maple Market</strong><small>The Mesos Ledger</small></span>
+      </a>
+      <div class="header-right">
+        <span class="issue-id">CLASSIC WORLD <span class="issue-divider">/</span> MARKET RECORDS</span>
+        <a href="https://github.com/iplayvideogames/maplestory-market" class="repo-link" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="masthead" aria-labelledby="masthead-title">
+        <div class="masthead-copy">
+          <div class="eyebrow"><span class="eyebrow-dash"></span> PLAYER-REPORTED ECONOMY <span class="eyebrow-dash"></span></div>
+          <h1 id="masthead-title">Know the price.<br><em>Make the trade.</em></h1>
+          <p>What actually sold, what remains listed, and how asking prices compare. Every number is from observed MapleStory trades—not a price prediction.</p>
+          <div class="live-status" id="live-status" role="status" aria-live="polite"><span class="live-dot"></span><span id="sync-label">Connecting to price ledger…</span><button type="button" class="refresh-link" id="refresh-btn">Refresh ↻</button></div>
+        </div>
+        <div class="market-seal" aria-hidden="true"><span>MESOS</span><strong>₥</strong><span>MARKET<br>ARCHIVE</span><span class="seal-ring"></span></div>
+      </section>
+
+      <section class="ledger-strip" aria-label="Market at a glance">
+        <div class="ledger-stat"><span class="stat-label">ITEMS CATALOGUED</span><span class="stat-number" id="stat-items">—</span></div>
+        <div class="ledger-stat"><span class="stat-label">SOLD PRICE RECORDS</span><span class="stat-number" id="stat-sales">—</span></div>
+        <div class="ledger-stat"><span class="stat-label">PRICED UNSOLD</span><span class="stat-number" id="stat-asks">—</span></div>
+        <div class="ledger-stat"><span class="stat-label">OBSERVED SALE VALUE</span><span class="stat-number" id="stat-total">—</span></div>
+      </section>
+
+      <section class="workspace" aria-label="Market price directory">
+        <div class="workspace-heading">
+          <div><span class="section-overline">THE EXCHANGE</span><h2>Item directory<span class="heading-dot">.</span></h2></div>
+          <div class="workspace-meta">Prices in <strong>mesos</strong> <span class="meta-separator">/</span> Records in order observed</div>
+        </div>
+
+        <div class="filters-bar" id="filters-bar">
+          <label class="searchbox" for="item-search"><span class="search-glyph" aria-hidden="true">⌕</span><input id="item-search" type="search" autocomplete="off" placeholder="Search items, scrolls, shorthand names…" aria-label="Search market items" /><span class="search-shortcut">SEARCH</span></label>
+          <label class="sr-only" for="category">Category</label>
+          <select id="category"><option value="all">All categories</option><option value="scroll">Scrolls</option><option value="fashion">Fashion &amp; NX</option><option value="equipment">Equipment</option><option value="material">Materials</option><option value="other">Other</option></select>
+          <label class="sr-only" for="sort">Sort items</label>
+          <select id="sort"><option value="recent">Latest activity</option><option value="observations">Most observations</option><option value="avg">Highest sold average</option><option value="name">Name A–Z</option></select>
+        </div>
+        <nav class="view-tabs" aria-label="Market view">
+          <button type="button" data-view="all" class="active" aria-pressed="true">All items <span id="tab-all">—</span></button>
+          <button type="button" data-view="sold" aria-pressed="false">Sold history</button>
+          <button type="button" data-view="unsold" aria-pressed="false">Unsold asks</button>
+          <button type="button" data-view="under" aria-pressed="false">Below average <span class="tiny-arrow">↘</span></button>
+          <span class="tab-count" id="result-count" aria-live="polite"></span>
+        </nav>
+
+        <div class="exchange-grid">
+          <section class="list-panel" aria-label="Item results">
+            <div class="column-legend"><span>ITEM</span><span class="legend-num">AVG. SOLD</span><span class="legend-num hide-narrow">LATEST</span><span class="legend-num">LOWEST ASK</span><span class="legend-num hide-xs">GAP</span></div>
+            <div id="item-list" class="item-list" aria-live="polite"><div class="loading-text">Loading the trading ledger…</div></div>
+            <div class="list-footer"><span id="list-caption"></span><button type="button" id="show-more" class="show-more" hidden>Show more records <span aria-hidden="true">↓</span></button></div>
+          </section>
+
+          <aside class="detail-panel" aria-label="Selected item details" id="item-detail">
+            <div class="loading-text">Select an item to inspect its trade history.</div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="bottom-grid" aria-label="Additional market insights">
+        <div class="insight-panel">
+          <div class="insight-head"><span class="section-overline">PRICE WATCH</span><h2>Asking below average</h2><p>Listings cheaper than the recorded average sale. Not guaranteed available.</p></div>
+          <div id="underpriced" class="insight-list"></div>
+        </div>
+        <div class="insight-panel">
+          <div class="insight-head"><span class="section-overline">TAPE</span><h2>Recent sightings</h2><p>Latest observations logged to the market ledger.</p></div>
+          <div id="recent-tape" class="insight-list"></div>
+        </div>
+      </section>
+      <div class="notice" id="data-notice" role="status" hidden></div>
+    </main>
+    <footer class="site-footer">
+      <span><strong>Maple Market</strong> <span class="footer-diamond">◆</span> An independent community trade ledger</span>
+      <span>Sold averages exclude unsold asks · <a target="_blank" rel="noopener noreferrer" href="https://meowdb.com/msclassic/item-db/all">Item names &amp; icons via MeowDB ↗</a></span>
+    </footer>
+  </div>
 </body>
 </html>
