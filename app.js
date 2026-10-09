@@ -10,6 +10,15 @@ const state={db:null,entries:[],items:[],byName:new Map(),selected:null,view:"al
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const num=n=>n==null?"—":Math.round(n).toLocaleString("en-US");
 const short=n=>{if(n==null)return"—";if(n>=1e6)return +(n/1e6).toFixed(2)+"m";if(n>=1000)return +(n/1000).toFixed(1)+"k";return num(n)};
+const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function trackedDate(value){
+  if(typeof value!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(value))return "Date unknown";
+  const [year,month,day]=value.split("-").map(Number);
+  const check=new Date(Date.UTC(year,month-1,day));
+  if(check.getUTCFullYear()!==year||check.getUTCMonth()!==month-1||check.getUTCDate()!==day)return "Date unknown";
+  return MONTHS[month-1]+" "+day+", "+year;
+}
+
 const norm=s=>String(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/\b(luck)\b/g,"luk").replace(/\b(strength)\b/g,"str").replace(/\b(dexterity)\b/g,"dex").replace(/\b(intelligence)\b/g,"int").replace(/\b(pole arm)\b/g,"polearm").replace(/\b(earrings)\b/g,"earring").replace(/\b(t-shirt|tee)\b/g,"t shirt").replace(/\b(\d+)\s*(percent|pct)\b/g,"$1%").replace(/[^a-z0-9%]+/g," ").trim();
 function category(name,meta){
   if(meta&&meta.category)return meta.category;
@@ -59,6 +68,7 @@ function compute(){
       lastSold:sold.length?sold[sold.length-1].price:null,
       soldUnits,askUnits:ask.reduce((a,e)=>a+e.quantity,0),
       firstId:history[0].id,lastId:history[history.length-1].id,
+      firstDate:history[0].date,lastDate:history[history.length-1].date,
       category:category(name,m),
       search:norm([name,m.canonical,...(Array.isArray(m.aliases)?m.aliases:[])].filter(Boolean).join(" ")),
       gap:avg!=null&&lowAsk!=null?(lowAsk/avg-1)*100:null
@@ -94,7 +104,7 @@ function row(item){
   let gaptxt="—",gapClass="";
   if(gap!=null){gaptxt=(gap>0?"+":"")+gap.toFixed(0)+"%";gapClass=gap<0?"better":""}
   return '<button class="item-row'+(item.name===state.selected?" is-selected":"")+'" type="button" data-item="'+n+'" aria-label="View '+n+' price history" aria-pressed="'+(item.name===state.selected)+'">'+
-    '<span class="item-cell">'+icon(item.name)+'<span style="min-width:0"><span class="item-name">'+n+'</span><span class="item-sub">'+sub+'</span></span></span>'+
+    '<span class="item-cell">'+icon(item.name)+'<span style="min-width:0"><span class="item-name">'+n+'</span><span class="item-sub">'+sub+'</span><span class="item-seen">Tracked '+escapeHtml(trackedDate(item.lastDate))+'</span></span></span>'+
     '<span class="item-figure '+(item.avg==null?"missing":"sale")+'">'+short(item.avg)+'</span>'+
     '<span class="item-figure hide-narrow '+(item.lastSold==null?"missing":"")+'">'+short(item.lastSold)+'</span>'+
     '<span class="item-figure '+(item.lowAsk==null?"missing":"ask")+'">'+short(item.lowAsk)+'</span>'+
@@ -138,7 +148,7 @@ function chart(i){
   const stroke=sold.map((o,k)=>(k===0?"M":"L")+x(o.j).toFixed(1)+" "+y(o.e.price).toFixed(1)).join(" ");
   const marks=points.map((e,j)=>{
     const style=e.status==="sold"?'fill="#367451" stroke="#f7f9f1"':'fill="#fffdf7" stroke="#bb764e"';
-    return '<circle cx="'+x(j).toFixed(1)+'" cy="'+y(e.price).toFixed(1)+'" r="5.3" stroke-width="2.3" '+style+'><title>'+escapeHtml(e.status)+" · "+num(e.price)+" mesos · "+e.quantity+" unit(s)</title></circle>";
+    return '<circle cx="'+x(j).toFixed(1)+'" cy="'+y(e.price).toFixed(1)+'" r="5.3" stroke-width="2.3" '+style+'><title>'+escapeHtml(e.status)+" · "+num(e.price)+" mesos · "+e.quantity+" unit(s) · "+escapeHtml(trackedDate(e.date))+"</title></circle>";
   }).join("");
   return '<div class="chart-legend"><span><i></i>Sold price</span><span><i class="ask"></i>Unsold asking</span></div>'+
     '<div class="chart-box"><svg viewBox="0 0 '+W+" "+H+'" role="img" aria-label="Sold and unsold price history for '+escapeHtml(i.name)+'">'+
@@ -157,7 +167,7 @@ function detail(){
   $("item-detail").innerHTML=
   '<div class="detail-kicker">ITEM FILE / '+escapeHtml(cat.toUpperCase())+'</div>'+
   '<div class="detail-head">'+icon(i.name,true)+'<div><h3>'+escapeHtml(i.name)+'</h3>'+
-  '<p>'+i.sold.length+' sold observations · '+i.soldUnits+' sold units</p>'+canonicalText+
+  '<p>'+i.sold.length+' sold observations · '+i.soldUnits+' sold units</p><p class="detail-tracked">First tracked '+escapeHtml(trackedDate(i.firstDate))+' · Latest '+escapeHtml(trackedDate(i.lastDate))+'</p>'+canonicalText+
   (link?'<a class="meow-link" href="'+link+'" target="_blank" rel="noopener noreferrer">View verified MeowDB item ↗</a>':
   '<a class="meow-link" href="https://meowdb.com/msclassic/item-db/all" target="_blank" rel="noopener noreferrer">Browse MeowDB (unmatched) ↗</a>')+'</div></div>'+
   '<div class="metrics">'+[
@@ -168,7 +178,7 @@ function detail(){
   ].map(v=>'<div class="metric"><div class="metric-label">'+v[0]+'</div><div class="metric-value '+v[2]+'">'+v[1]+'</div></div>').join("")+'</div>'+
   '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><div class="chart-label">RECORDED PRICE MOVEMENT</div><span class="chart-caption">'+i.history.length+' sightings</span></div>'+chart(i)+
   '<div class="history-wrap"><div class="history-head"><strong>Transaction ledger</strong><span>Oldest → newest</span></div>'+
-  '<div class="history-scroller">'+i.history.map(e=>'<div class="trade-row"><span class="trade-id">#'+e.id+'</span><span class="trade-status '+(e.status==="unsold"?"unsold":"")+'">'+(e.status==="sold"?"SOLD":"UNSOLD")+'</span><span class="trade-price">'+num(e.price)+'</span><span class="trade-qty">×'+e.quantity+'</span></div>').join("")+'</div></div>'+
+  '<div class="history-scroller">'+i.history.map(e=>'<div class="trade-row"><span class="trade-id">#'+e.id+'</span><span class="trade-when"><span class="trade-status '+(e.status==="unsold"?"unsold":"")+'">'+(e.status==="sold"?"SOLD":"UNSOLD")+'</span><time class="trade-date" datetime="'+escapeHtml(e.date||"")+'">'+escapeHtml(trackedDate(e.date))+'</time></span><span class="trade-price">'+num(e.price)+'</span><span class="trade-qty">×'+e.quantity+'</span></div>').join("")+'</div></div>'+
   '<div class="detail-fineprint">Sold price mean: '+num(i.avg)+' mesos per observation. Unit-weighted sold average: '+num(i.weighted)+' mesos. Asking prices never affect either mean.'+
   (i.ask.some(e=>e.price==null)?' Unpriced unsold notes are retained.':'')+'</div>';
 }
@@ -177,7 +187,7 @@ function insights(){
   $("underpriced").innerHTML=cheaper.length?cheaper.map(i=>
     '<div class="insight-item"><div><button type="button" data-item="'+escapeHtml(i.name)+'">'+escapeHtml(i.name)+'</button><small>Sold mean '+short(i.avg)+' / Asking '+short(i.lowAsk)+'</small></div><span class="diff">'+i.gap.toFixed(0)+'%</span></div>').join(""):'<div class="empty">No below-average asks recorded.</div>';
   $("recent-tape").innerHTML=state.entries.filter(e=>e.price!=null).slice(-8).reverse().map(e=>
-    '<div class="insight-item"><div><button type="button" data-item="'+escapeHtml(e.name)+'">'+escapeHtml(e.name)+'</button><small>'+e.status.toUpperCase()+(e.quantity>1?' / ×'+e.quantity:'')+'</small></div><span class="receipt '+(e.status==="unsold"?"unsold":"")+'">'+short(e.price)+'</span></div>').join("");
+    '<div class="insight-item"><div><button type="button" data-item="'+escapeHtml(e.name)+'">'+escapeHtml(e.name)+'</button><small>'+e.status.toUpperCase()+(e.quantity>1?' / ×'+e.quantity:'')+' · '+escapeHtml(trackedDate(e.date))+'</small></div><span class="receipt '+(e.status==="unsold"?"unsold":"")+'">'+short(e.price)+'</span></div>').join("");
 }
 function render(){compute();kpis();renderList();detail();insights()}
 function select(name,scroll){
@@ -191,7 +201,7 @@ function validate(json){
   for(const e of json.entries){
     if(typeof e.name!=="string"||!e.name||!["sold","unsold"].includes(e.status)||
     !(e.price===null||(typeof e.price==="number"&&Number.isFinite(e.price)&&e.price>=0))||
-    !Number.isInteger(e.quantity)||e.quantity<1)throw Error("Invalid trade observation");
+    !Number.isInteger(e.quantity)||e.quantity<1||trackedDate(e.date)==="Date unknown")throw Error("Invalid trade observation");
   }
   return json;
 }
