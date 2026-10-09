@@ -1,5 +1,5 @@
 {
-  "version": "1",
+  "version": "2",
   "lastUpdated": "2026-10-09",
   "entries": [
     {
@@ -998,32 +998,58 @@
   "items": {
     "White Label Ring": {
       "page": 1638,
-      "sprite": 1112100
+      "sprite": 1112100,
+      "category": "fashion"
     },
     "Angel Halo": {
       "page": 1759,
-      "sprite": 1007077
+      "sprite": 1007077,
+      "category": "fashion"
     },
     "Slime Earrings": {
       "page": 2767,
       "sprite": 1037003,
-      "locale": "ko"
+      "locale": "ko",
+      "category": "fashion"
     },
     "Earring LUK 60%": {
       "page": 97,
-      "sprite": 2040313
+      "sprite": 2040313,
+      "canonical": "Earring LUK Scroll: Intermediate",
+      "category": "scroll",
+      "aliases": [
+        "earring luck 60%",
+        "earring luk scroll 60%",
+        "earring 60% luck"
+      ]
     },
     "Earring DEX 60%": {
       "page": 95,
-      "sprite": 2040305
+      "sprite": 2040305,
+      "canonical": "Earring DEX Scroll: Intermediate",
+      "category": "scroll",
+      "aliases": [
+        "earring dex scroll 60%"
+      ]
     },
     "Earring STR 60%": {
       "page": 98,
-      "sprite": 2040301
+      "sprite": 2040301,
+      "canonical": "Earring STR Scroll: Intermediate",
+      "category": "scroll",
+      "aliases": [
+        "earring strength 60%",
+        "earring str scroll 60%"
+      ]
     },
     "Earring INT 60%": {
       "page": 96,
-      "sprite": 2040309
+      "sprite": 2040309,
+      "canonical": "Earring INT Scroll: Intermediate",
+      "category": "scroll",
+      "aliases": [
+        "earring int scroll 60%"
+      ]
     },
     "Slime Slippers": {
       "page": 1631,
@@ -1031,7 +1057,13 @@
     },
     "Slime T-Shirt": {
       "page": 1887,
-      "sprite": 1047025
+      "sprite": 1047025,
+      "canonical": "Slime T-Shirt",
+      "aliases": [
+        "slime t",
+        "slime t shirt"
+      ],
+      "category": "fashion"
     },
     "Dollish Pink": {
       "page": 2764,
@@ -1049,11 +1081,20 @@
     },
     "Claw Attack 60%": {
       "page": 71,
-      "sprite": 2044701
+      "sprite": 2044701,
+      "aliases": [
+        "claw 60%"
+      ],
+      "category": "scroll"
     },
     "Staff Magic Attack 60%": {
       "page": 191,
-      "sprite": 2043801
+      "sprite": 2043801,
+      "aliases": [
+        "staff 60%",
+        "staff attack 60%"
+      ],
+      "category": "scroll"
     },
     "Selective 5-slot Coupon": {
       "page": 1536,
@@ -1082,11 +1123,36 @@
     "Sailor Hat": {
       "page": 2760,
       "locale": "ko"
+    },
+    "Polearm Attack 60%": {
+      "aliases": [
+        "pole arm 60%",
+        "polearm 60%"
+      ],
+      "category": "scroll"
+    },
+    "Polearm Attack 10%": {
+      "aliases": [
+        "pole arm 10%"
+      ],
+      "category": "scroll"
+    },
+    "Wand Magic Attack 60%": {
+      "aliases": [
+        "wand 60%",
+        "wand attack 60%"
+      ],
+      "category": "scroll"
+    },
+    "Bucket Hat": {
+      "category": "fashion"
     }
   },
   "pending": [
     {
       "text": "Black Sunglasses, Angel Halo, Angel Wings, Angel Wand — 14k (ambiguous voice batch; price assignment not confirmed)"
     }
-  ]
+  ],
+  "dataBranch": "data",
+  "notes": "Labels are aliases for the original observed item; unverified canonical matches are left unlinked. The primary average is mean sale price across observations."
 }
