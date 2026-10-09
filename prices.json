@@ -1555,6 +1555,54 @@
         "Pet Speed Scroll 60%"
       ],
       "category": "scroll"
+    },
+    "Garnet Ore": {
+      "page": 320,
+      "category": "material"
+    },
+    "Stiff Feathers": {
+      "page": 307,
+      "category": "material"
+    },
+    "Bronze Ore": {
+      "page": 413,
+      "category": "material"
+    },
+    "Aquamarine Ore": {
+      "page": 322,
+      "category": "material"
+    },
+    "Opal Ore": {
+      "page": 324,
+      "category": "material"
+    },
+    "Garnet": {
+      "page": 329,
+      "category": "material"
+    },
+    "Weighted Earrings": {
+      "page": 901,
+      "category": "equipment"
+    },
+    "Leather": {
+      "page": 396,
+      "category": "material"
+    },
+    "Forked Dagger": {
+      "page": 567,
+      "category": "equipment"
+    },
+    "Work Gloves": {
+      "page": 1435,
+      "category": "equipment"
+    },
+    "Sapphire Ore": {
+      "page": 325,
+      "category": "material"
+    },
+    "Amethyst Ore": {
+      "page": 321,
+      "category": "material"
     }
   },
   "pending": [
