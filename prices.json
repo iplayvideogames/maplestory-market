@@ -1,0 +1,1092 @@
+{
+  "version": "1",
+  "lastUpdated": "2026-10-09",
+  "entries": [
+    {
+      "id": 1,
+      "name": "Sandblasted Jeans 1",
+      "price": 2000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 2,
+      "name": "Silver Ore",
+      "price": 299,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 3,
+      "name": "Iron Ore",
+      "price": 399,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 4,
+      "name": "Black Cat Beanie",
+      "price": 200000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 5,
+      "name": "Orange Cat Beanie",
+      "price": 130000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 6,
+      "name": "Loose Fit Sweater",
+      "price": 70000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 7,
+      "name": "Violet Dot Jeans",
+      "price": 40000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 8,
+      "name": "Overall STR 10%",
+      "price": 10000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 9,
+      "name": "Earring INT 10%",
+      "price": 10000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 10,
+      "name": "Earring DEX 60%",
+      "price": 28000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 11,
+      "name": "White Ribboned Sailor Dress",
+      "price": 8000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 12,
+      "name": "Claw Attack 60%",
+      "price": 80000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 13,
+      "name": "Polearm Attack 60%",
+      "price": 25000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 14,
+      "name": "Bow Attack 60%",
+      "price": 25000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 15,
+      "name": "Bucket Hat",
+      "price": 10000,
+      "quantity": 3,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 16,
+      "name": "Toga NX Wear",
+      "price": 7000,
+      "quantity": 5,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 17,
+      "name": "Patissier Hat",
+      "price": 5500,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 18,
+      "name": "Red Sailor Shirt",
+      "price": 5000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 19,
+      "name": "Sailor Hat",
+      "price": 5000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 20,
+      "name": "Tourist T",
+      "price": 5000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 21,
+      "name": "Selective 5-slot Coupon",
+      "price": 13000,
+      "quantity": 5,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 22,
+      "name": "Orange Hoodie",
+      "price": 7000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 23,
+      "name": "Angel Wand",
+      "price": 12000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 24,
+      "name": "Loose Fit Sweater",
+      "price": 55000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 25,
+      "name": "Bronze Ore",
+      "price": 299,
+      "quantity": 12,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 26,
+      "name": "Slime Slippers",
+      "price": 15000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 27,
+      "name": "Claw Attack 60%",
+      "price": 80000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 28,
+      "name": "Wand Magic Attack 60%",
+      "price": 40000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 29,
+      "name": "Earring LUK 60%",
+      "price": 30000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 30,
+      "name": "Slime T-Shirt",
+      "price": 13000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 31,
+      "name": "Slime Slippers",
+      "price": 13000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 32,
+      "name": "White Label Ring",
+      "price": 78000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 33,
+      "name": "Aquamarine Ore",
+      "price": 1600,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 34,
+      "name": "Sapphire Ore",
+      "price": 500,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 35,
+      "name": "Amethyst Ore",
+      "price": 600,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 36,
+      "name": "Angel Halo",
+      "price": 22000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 37,
+      "name": "Nakamaki",
+      "price": 30000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 38,
+      "name": "Slime Earrings",
+      "price": 12000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 39,
+      "name": "Pan Lid",
+      "price": 45000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 40,
+      "name": "Angel Halo",
+      "price": 30000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 41,
+      "name": "Dollish Pink",
+      "price": 19000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 42,
+      "name": "Mystery Palette",
+      "price": 25500,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 43,
+      "name": "Red Sailor Shirt",
+      "price": 8000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 44,
+      "name": "Red Sailor Skirt",
+      "price": 8000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 45,
+      "name": "Bucket Hat",
+      "price": 8000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 46,
+      "name": "Iron Ingot",
+      "price": 1500,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 47,
+      "name": "Bunny Ears",
+      "price": 12000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 48,
+      "name": "Bunny Earmuffs",
+      "price": 12000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 49,
+      "name": "Choco Candy Cookie",
+      "price": 250000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 50,
+      "name": "Wand Magic Attack 60%",
+      "price": 30000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 51,
+      "name": "Crossbow Attack 60%",
+      "price": 16000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 52,
+      "name": "White Label Ring",
+      "price": 50000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 53,
+      "name": "Ryden",
+      "price": 20000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 54,
+      "name": "Forked Dagger",
+      "price": 12000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 55,
+      "name": "Work Gloves",
+      "price": 2000,
+      "quantity": 10,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 56,
+      "name": "White Label Ring",
+      "price": 40000,
+      "quantity": 4,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 57,
+      "name": "Claw Attack 60%",
+      "price": 70000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 58,
+      "name": "Angel Halo",
+      "price": 10000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 59,
+      "name": "Orange Cat Beanie",
+      "price": 45000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 60,
+      "name": "Polearm Attack 10%",
+      "price": 6000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 61,
+      "name": "Dagger Attack 60%",
+      "price": null,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 62,
+      "name": "Wobli Throwing Stars",
+      "price": 35000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 63,
+      "name": "Staff Magic Attack 60%",
+      "price": 29000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 64,
+      "name": "Earring INT 60%",
+      "price": 22000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 65,
+      "name": "Earring DEX 60%",
+      "price": 22000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 66,
+      "name": "Earring STR 60%",
+      "price": 21000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 67,
+      "name": "Two-Handed Axe Attack 60%",
+      "price": null,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 68,
+      "name": "Slime T-Shirt",
+      "price": 15000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 69,
+      "name": "Sailor Outfit",
+      "price": 7000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 70,
+      "name": "Cat Hat",
+      "price": 5700,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 71,
+      "name": "Slime Earrings",
+      "price": 12800,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 72,
+      "name": "Earring LUK 60%",
+      "price": 50000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 73,
+      "name": "Earring LUK 60%",
+      "price": 28000,
+      "quantity": 2,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 74,
+      "name": "Selective 5-slot Coupon",
+      "price": 12000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 75,
+      "name": "Butterfly Skirt",
+      "price": 6000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 76,
+      "name": "Slime Earrings",
+      "price": 10000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 77,
+      "name": "Kitty Chat Ring",
+      "price": 7300,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 78,
+      "name": "Dollish Pink",
+      "price": 18000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 79,
+      "name": "Earring STR 60%",
+      "price": 20000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 80,
+      "name": "Earring DEX 60%",
+      "price": 27000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 81,
+      "name": "Earring LUK 60%",
+      "price": 32000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 82,
+      "name": "White Label Ring",
+      "price": 36000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 83,
+      "name": "Earring STR 60%",
+      "price": 40000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 84,
+      "name": "Earring DEX 60%",
+      "price": 30000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 85,
+      "name": "Earring LUK 60%",
+      "price": 28000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 86,
+      "name": "Pan Lid",
+      "price": 45000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 87,
+      "name": "Earring STR 60%",
+      "price": null,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 88,
+      "name": "Slime T-Shirt",
+      "price": 15000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 89,
+      "name": "Slime Earrings",
+      "price": 15000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 90,
+      "name": "Iron Ore",
+      "price": 399,
+      "quantity": 20,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 91,
+      "name": "Angel Halo",
+      "price": 16000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 92,
+      "name": "Baby Angel Wings",
+      "price": 13000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 93,
+      "name": "White Label Ring",
+      "price": 40000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 94,
+      "name": "Sky Blue Cat Beanie",
+      "price": null,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 95,
+      "name": "Staff Magic Attack 60%",
+      "price": 22000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 96,
+      "name": "Cacao Bear Shoes",
+      "price": 30000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 97,
+      "name": "Earring STR 60%",
+      "price": 25000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 98,
+      "name": "Bow Attack 60%",
+      "price": 50000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 99,
+      "name": "Dagger Attack 60%",
+      "price": 25000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 100,
+      "name": "Pig Illustrated",
+      "price": 20000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 101,
+      "name": "Bunny Ears",
+      "price": 10000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 102,
+      "name": "Slime Slippers",
+      "price": 17000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 103,
+      "name": "Slime Earrings",
+      "price": 12000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 104,
+      "name": "Slime Earrings",
+      "price": 9000,
+      "quantity": 2,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 105,
+      "name": "Angel Halo",
+      "price": 20000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 106,
+      "name": "Dollish Pink",
+      "price": null,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 107,
+      "name": "Staff Magic Attack 60%",
+      "price": 45000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 108,
+      "name": "Earring INT 60%",
+      "price": 32000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 109,
+      "name": "Pan Lid",
+      "price": 50000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 110,
+      "name": "Earring LUK 60%",
+      "price": 35000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 111,
+      "name": "Earring LUK 60%",
+      "price": 25000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 112,
+      "name": "Crossbow Attack 60%",
+      "price": 20000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 113,
+      "name": "Slime Earrings",
+      "price": 10000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 114,
+      "name": "Stocking Shorts",
+      "price": 65000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 115,
+      "name": "White Label Ring",
+      "price": 35000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 116,
+      "name": "Slime Slippers",
+      "price": 14000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 117,
+      "name": "Choco Candy Cookie",
+      "price": 60000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 118,
+      "name": "Dollish Pink",
+      "price": 14000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 119,
+      "name": "Bunny Ears",
+      "price": 14000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 120,
+      "name": "Earring STR 60%",
+      "price": 29000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 121,
+      "name": "Heart Tights",
+      "price": 25000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 122,
+      "name": "Bucket Hat",
+      "price": 5000,
+      "quantity": 2,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 123,
+      "name": "Earring LUK 60%",
+      "price": 28000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 124,
+      "name": "Heart Tights",
+      "price": 15000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    }
+  ],
+  "items": {
+    "White Label Ring": {
+      "page": 1638,
+      "sprite": 1112100
+    },
+    "Angel Halo": {
+      "page": 1759,
+      "sprite": 1007077
+    },
+    "Slime Earrings": {
+      "page": 2767,
+      "sprite": 1037003,
+      "locale": "ko"
+    },
+    "Earring LUK 60%": {
+      "page": 97,
+      "sprite": 2040313
+    },
+    "Earring DEX 60%": {
+      "page": 95,
+      "sprite": 2040305
+    },
+    "Earring STR 60%": {
+      "page": 98,
+      "sprite": 2040301
+    },
+    "Earring INT 60%": {
+      "page": 96,
+      "sprite": 2040309
+    },
+    "Slime Slippers": {
+      "page": 1631,
+      "sprite": 1077029
+    },
+    "Slime T-Shirt": {
+      "page": 1887,
+      "sprite": 1047025
+    },
+    "Dollish Pink": {
+      "page": 2764,
+      "sprite": 1017022,
+      "locale": "ko"
+    },
+    "Bunny Ears": {
+      "page": 2761,
+      "sprite": 1007142,
+      "locale": "ko"
+    },
+    "Pan Lid": {
+      "page": 917,
+      "sprite": 1092002
+    },
+    "Claw Attack 60%": {
+      "page": 71,
+      "sprite": 2044701
+    },
+    "Staff Magic Attack 60%": {
+      "page": 191,
+      "sprite": 2043801
+    },
+    "Selective 5-slot Coupon": {
+      "page": 1536,
+      "sprite": 5680001
+    },
+    "Iron Ingot": {
+      "page": 421,
+      "sprite": 4010101
+    },
+    "Bow Attack 60%": {
+      "page": 39,
+      "sprite": 2044501
+    },
+    "Crossbow Attack 60%": {
+      "page": 75,
+      "sprite": 2044601
+    },
+    "Iron Ore": {
+      "page": 414,
+      "sprite": 4010000
+    },
+    "Silver Ore": {
+      "page": 417,
+      "sprite": 4010005
+    },
+    "Sailor Hat": {
+      "page": 2760,
+      "locale": "ko"
+    }
+  },
+  "pending": [
+    {
+      "text": "Black Sunglasses, Angel Halo, Angel Wings, Angel Wand — 14k (ambiguous voice batch; price assignment not confirmed)"
+    }
+  ]
+}
