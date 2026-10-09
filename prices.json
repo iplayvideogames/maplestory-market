@@ -1081,6 +1081,22 @@
       "quantity": 1,
       "status": "sold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 136,
+      "name": "White Label Ring",
+      "price": 48000,
+      "quantity": 3,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 137,
+      "name": "Claw Attack 60%",
+      "price": 88000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
