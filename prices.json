@@ -1009,6 +1009,14 @@
       "quantity": 10,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 127,
+      "name": "Garnet",
+      "price": 2000,
+      "quantity": 2,
+      "status": "sold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
