@@ -143,6 +143,7 @@ var newSig=JSON.stringify(x.entries)+JSON.stringify(x.items);if(newSig!==signatu
 setSync("Data synced · "+x.entries.length+" entries");el("error").style.display="none";
 }).catch(function(e){el("error").style.display="block";el("error").textContent="Could not load latest prices: "+e.message+". Please try refreshing.";setSync("Data sync unavailable")});
 }
+document.addEventListener("error",function(ev){var img=ev.target;if(img&&img.tagName==="IMG"){if(img.dataset.alt&&!img.dataset.tried){img.dataset.tried="1";img.src=img.dataset.alt}else{img.style.display="none"}}},true);
 document.addEventListener("click",function(ev){var b=ev.target.closest("[data-name]");if(!b)return;var n=b.getAttribute("data-name");if(!map.has(n))return;selected=n;rows();detail();if(window.innerWidth<850)el("detail").scrollIntoView({behavior:"smooth",block:"nearest"});try{history.replaceState(null,"","?item="+encodeURIComponent(n))}catch(e){}});
 ["search","filter","sort"].forEach(function(id){el(id).addEventListener(id==="search"?"input":"change",function(){allRows=false;rows()})});
 el("more").addEventListener("click",function(){allRows=!allRows;rows()});
