@@ -1017,6 +1017,46 @@
       "quantity": 2,
       "status": "sold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 128,
+      "name": "Black Sunglasses",
+      "price": 20000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 129,
+      "name": "Sailor Outfit",
+      "price": 20000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 130,
+      "name": "Toga NX Wear",
+      "price": 12000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 131,
+      "name": "Earring STR 60%",
+      "price": 35000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 132,
+      "name": "Crossbow Attack 60%",
+      "price": 45000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
