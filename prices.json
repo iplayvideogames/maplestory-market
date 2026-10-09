@@ -1297,6 +1297,54 @@
       "quantity": 20,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 163,
+      "name": "Selective 5-slot Coupon",
+      "price": 13000,
+      "quantity": 3,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 164,
+      "name": "Ilbi Throwing Stars",
+      "price": 25000000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 165,
+      "name": "Mokbi Throwing Stars",
+      "price": 150000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 166,
+      "name": "Selective 5-slot Coupon",
+      "price": 12000,
+      "quantity": 10,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 167,
+      "name": "Steel Igor",
+      "price": 10000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 168,
+      "name": "Pet Speed 60%",
+      "price": 35000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
@@ -1480,6 +1528,33 @@
       "page": 1644,
       "canonical": "Kitty Chat Ring",
       "category": "fashion"
+    },
+    "Steel Igor": {
+      "page": 686,
+      "canonical": "Steel Igor",
+      "category": "weapon"
+    },
+    "Bronze Igor": {
+      "page": 685,
+      "canonical": "Bronze Igor",
+      "category": "weapon"
+    },
+    "White Ribbon Sailor Dress": {
+      "aliases": [
+        "White Ribboned Sailor Dress"
+      ]
+    },
+    "Toga": {
+      "aliases": [
+        "Toga NX Wear"
+      ],
+      "category": "fashion"
+    },
+    "Pet Speed 60%": {
+      "aliases": [
+        "Pet Speed Scroll 60%"
+      ],
+      "category": "scroll"
     }
   },
   "pending": [
