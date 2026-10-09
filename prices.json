@@ -1129,6 +1129,174 @@
       "quantity": 1,
       "status": "unsold",
       "date": "2026-10-09"
+    },
+    {
+      "id": 142,
+      "name": "Slime Earrings",
+      "price": 13000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 143,
+      "name": "White Ribbon Sailor Dress",
+      "price": 10000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 144,
+      "name": "Garnet Ore",
+      "price": 1300,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 145,
+      "name": "Garnet",
+      "price": 2000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 146,
+      "name": "Bunny Ears",
+      "price": 18000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 147,
+      "name": "Splashed ChocoBoy",
+      "price": 70000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 148,
+      "name": "Splashed ChocoGirls",
+      "price": 80000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 149,
+      "name": "Pan Lid",
+      "price": 30000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 150,
+      "name": "Opal Ore",
+      "price": 150,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 151,
+      "name": "Aquamarine Ore",
+      "price": 400,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 152,
+      "name": "Leather",
+      "price": 200,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 153,
+      "name": "Earring LUK 60%",
+      "price": 40000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 154,
+      "name": "Weighted Earrings",
+      "price": 10000,
+      "quantity": 1,
+      "status": "sold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 155,
+      "name": "Garnet Ore",
+      "price": 1000,
+      "quantity": 30,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 156,
+      "name": "Bronze Ore",
+      "price": 199,
+      "quantity": 42,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 157,
+      "name": "Baby Angel Wings",
+      "price": 18000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 158,
+      "name": "Toga",
+      "price": 8000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 159,
+      "name": "Dagger Attack 100%",
+      "price": 28000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 160,
+      "name": "Spear Attack 60%",
+      "price": 40000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 161,
+      "name": "Pan Lid",
+      "price": 35000,
+      "quantity": 1,
+      "status": "unsold",
+      "date": "2026-10-09"
+    },
+    {
+      "id": 162,
+      "name": "Stiff Feathers",
+      "price": 80,
+      "quantity": 20,
+      "status": "unsold",
+      "date": "2026-10-09"
     }
   ],
   "items": {
