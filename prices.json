@@ -492,7 +492,7 @@
     },
     {
       "id": 62,
-      "name": "Wobli Throwing Stars",
+      "name": "Wolbi Throwing Stars",
       "price": 35000,
       "quantity": 1,
       "status": "sold",
@@ -1124,7 +1124,7 @@
     },
     {
       "id": 141,
-      "name": "Wooden Top Throwing Stars",
+      "name": "Wooden Top",
       "price": 150000,
       "quantity": 1,
       "status": "unsold",
@@ -1140,7 +1140,7 @@
     },
     {
       "id": 143,
-      "name": "White Ribbon Sailor Dress",
+      "name": "White Ribboned Sailor Dress",
       "price": 10000,
       "quantity": 1,
       "status": "unsold",
@@ -1260,7 +1260,7 @@
     },
     {
       "id": 158,
-      "name": "Toga",
+      "name": "Toga NX Wear",
       "price": 8000,
       "quantity": 1,
       "status": "unsold",
@@ -1539,17 +1539,6 @@
       "canonical": "Bronze Igor",
       "category": "weapon"
     },
-    "White Ribbon Sailor Dress": {
-      "aliases": [
-        "White Ribboned Sailor Dress"
-      ]
-    },
-    "Toga": {
-      "aliases": [
-        "Toga NX Wear"
-      ],
-      "category": "fashion"
-    },
     "Pet Speed 60%": {
       "aliases": [
         "Pet Speed Scroll 60%"
@@ -1603,6 +1592,40 @@
     "Amethyst Ore": {
       "page": 321,
       "category": "material"
+    },
+    "Ilbi Throwing Stars": {
+      "sprite": 2070006,
+      "category": "throwing-star",
+      "canonical": "Ilbi Throwing Stars"
+    },
+    "Mokbi Throwing Stars": {
+      "sprite": 2070002,
+      "category": "throwing-star",
+      "canonical": "Mokbi Throwing Stars"
+    },
+    "Wooden Top": {
+      "category": "throwing-star",
+      "aliases": [
+        "Wooden Top Throwing Stars"
+      ]
+    },
+    "Wolbi Throwing Stars": {
+      "sprite": 2070001,
+      "category": "throwing-star",
+      "aliases": [
+        "Wobli Throwing Stars"
+      ]
+    },
+    "White Ribboned Sailor Dress": {
+      "aliases": [
+        "White Ribbon Sailor Dress"
+      ]
+    },
+    "Toga NX Wear": {
+      "aliases": [
+        "Toga"
+      ],
+      "category": "fashion"
     }
   },
   "pending": [
