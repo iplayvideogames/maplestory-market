@@ -1543,11 +1543,14 @@
       "aliases": [
         "Pet Speed Scroll 60%"
       ],
-      "category": "scroll"
+      "category": "scroll",
+      "page": 158,
+      "canonical": "Pet Equip Speed Scroll: Intermediate"
     },
     "Garnet Ore": {
       "page": 320,
-      "category": "material"
+      "category": "material",
+      "sprite": 4020000
     },
     "Stiff Feathers": {
       "page": 307,
@@ -1555,15 +1558,18 @@
     },
     "Bronze Ore": {
       "page": 413,
-      "category": "material"
+      "category": "material",
+      "sprite": 4010002
     },
     "Aquamarine Ore": {
       "page": 322,
-      "category": "material"
+      "category": "material",
+      "sprite": 4020002
     },
     "Opal Ore": {
       "page": 324,
-      "category": "material"
+      "category": "material",
+      "sprite": 4020004
     },
     "Garnet": {
       "page": 329,
@@ -1587,34 +1593,40 @@
     },
     "Sapphire Ore": {
       "page": 325,
-      "category": "material"
+      "category": "material",
+      "sprite": 4020005
     },
     "Amethyst Ore": {
       "page": 321,
-      "category": "material"
+      "category": "material",
+      "sprite": 4020001
     },
     "Ilbi Throwing Stars": {
       "sprite": 2070006,
       "category": "throwing-star",
-      "canonical": "Ilbi Throwing Stars"
+      "canonical": "Ilbi Throwing Stars",
+      "page": 300
     },
     "Mokbi Throwing Stars": {
       "sprite": 2070002,
       "category": "throwing-star",
-      "canonical": "Mokbi Throwing Stars"
+      "canonical": "Mokbi Throwing Stars",
+      "page": 296
     },
     "Wooden Top": {
       "category": "throwing-star",
       "aliases": [
         "Wooden Top Throwing Stars"
-      ]
+      ],
+      "page": 303
     },
     "Wolbi Throwing Stars": {
       "sprite": 2070001,
       "category": "throwing-star",
       "aliases": [
         "Wobli Throwing Stars"
-      ]
+      ],
+      "page": 295
     },
     "White Ribboned Sailor Dress": {
       "aliases": [
@@ -1626,6 +1638,16 @@
         "Toga"
       ],
       "category": "fashion"
+    },
+    "Dagger Attack 100%": {
+      "page": 80,
+      "canonical": "Dagger Attack Scroll: Lesser",
+      "category": "scroll"
+    },
+    "Spear Attack 60%": {
+      "page": 187,
+      "canonical": "Spear Attack Scroll: Intermediate",
+      "category": "scroll"
     }
   },
   "pending": [
